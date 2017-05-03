@@ -55,6 +55,4 @@ for(i in 1:6){
 
 ##Merge the test and train data using the ytest and ytrain variables respectivel.
 
-merged_data<-merge(Mergedtr1,Mergedtest1,by.x="activityL",by.y="activityL")
-
-                    
+merged_data<-merge(Mergedtr1,Mergedtest1,by.x="subjectTrain",by.y="subjectTest",all=TRUE)
