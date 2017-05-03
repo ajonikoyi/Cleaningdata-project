@@ -9,13 +9,13 @@
 ##the important files into R
 
 
-xtrain<-read.csv("c:/misc/data science/uci/train/X_train.csv",header=FALSE)
-ytrain<-read.csv("c:/misc/data science/uci/train/y_train.csv",header=FALSE)
-subtrain<-read.csv("c:/misc/data science/uci/train/subject_train.csv",header=FALSE)
-subtest<-read.csv("c:/misc/data science/uci/test/subject_test.csv",header=FALSE)
-ytest<-read.csv("c:/misc/data science/uci/test/y_test.csv",header=FALSE)
-xtest<-read.csv("c:/misc/data science/uci/test/X_test.csv",header=FALSE)
-features1<-read.delim("c:/misc/data science/uci/features.txt",header=FALSE)
+xtrain<-read.csv("UCI HAR Dataset/train/X_train.csv",header=FALSE)
+ytrain<-read.csv("UCI HAR Dataset/train/y_train.csv",header=FALSE)
+subtrain<-read.csv("UCI HAR Dataset/train/subject_train.csv",header=FALSE)
+subtest<-read.csv("UCI HAR Dataset/test/subject_test.csv",header=FALSE)
+ytest<-read.csv("UCI HAR Dataset/test/y_test.csv",header=FALSE)
+xtest<-read.csv("UCI HAR Dataset/test/X_test.csv",header=FALSE)
+features1<-read.delim("UCI HAR Dataset/features.txt",header=FALSE)
 
 ##Rename the columns of the xtrain and xtest data frames using the features.txt names
 realnames<-1:561
@@ -37,7 +37,7 @@ xtrain2<-xtrain[,grep("mean\\()$|std\\()$",features1[,1])]
 xtest2<-xtest[,grep("mean\\()$|std\\()$",features1[,1])]
 
 ##Read the file containing the activity labels
-actlab<-read.delim("c:/misc/data science/uci/activity_labels.txt",header=FALSE)
+actlab<-read.delim("UCI HAR Dataset/activity_labels.txt",header=FALSE)
 actlab<-as.vector(actlab[,1])
 
 ##Use regular expressions to replace the numbers in ytrain(and ytest) with appropriate
